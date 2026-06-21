@@ -9,6 +9,7 @@ Build/
 .vs/
 .idea/
 .vscode/
+*.DotSettings.user
 *.VC.db
 *.VC.opendb
 *.opensdf

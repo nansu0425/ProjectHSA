@@ -1,6 +1,14 @@
 # HSA
 
-프로젝트 이름은 Heroes Survival Arena의 이니셜인 HSA 입니다. Unreal Engine 5 Gameplay Systems 프로그래밍 실습 목적 프로젝트 입니다.
+## 개요
+
+프로젝트 이름은 Heroes Survival Arena의 이니셜인 **HSA** 입니다. Unreal Engine 5 **Gameplay Systems** 프로그래밍 실습 목적 프로젝트 입니다.
+
+## 개발 환경
+
+- **Unreal Engine 5.7**
+- **JetBrains Rider**
+- **Windows 11**
 
 ## 게임 소개
 
@@ -37,9 +45,3 @@
 - **웨이브 시스템(wave system)** — 난이도가 점점 올라가는 적 wave.
 - **휴식 시간 상점(shop)** — rest phase 동안 item과 equipment 구매.
 - **아레나 서바이벌** — 최대한 많은 wave를 버티기.
-
-## 기술 스택(Tech Stack)
-
-- **Unreal Engine 5.7**
-- **C++** (단일 runtime module: `HSA`)
-- **타겟 플랫폼:** PC / Windows

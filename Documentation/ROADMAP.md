@@ -56,6 +56,7 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
 ## Phase 0 — 프로젝트 기반
 
 > 일부 완료: UE 5.7 단일 `HSA` 런타임 모듈, `EnhancedInput` 의존성.
+> 실행 체크리스트·담당 구분·검증 방법은 [Phase 0 작업 계획](Phase0-Plan.md)을 본다.
 
 - **목표:** 빌드/모듈/입력 토대를 정리하고 GAS 사용 준비를 마친다.
 - **구현 항목:**
