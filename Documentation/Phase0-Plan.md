@@ -61,12 +61,17 @@ Phase에서 그때 만든다(빈 폴더는 git에 추적되지도 않음).
 
 > GAS 코드(`UAbilitySystemComponent` 등)를 쓰려면 플러그인 활성화(작업 2)와 의존성 선언(작업 3)이 **둘 다** 필요하다.
 
-### 작업 4 — 테스트 레벨 + Epic 무료 에셋
+### 작업 4 — 테스트 레벨
 
-- [ ] `[사용자]` 빈 맵 + 바닥/조명으로 테스트 레벨 생성, 기본 맵으로 지정.
-- [ ] `[사용자]` Epic 무료 에셋(Manny/Quinn 등) 프로젝트에 추가.
+- [x] `[사용자]` Basic 템플릿으로 테스트 레벨 `L_TestArena` 생성(바닥·조명 포함).
+- [x] `[사용자]` 기본 맵으로 지정 — `EditorStartupMap`/`GameDefaultMap` (→ [DefaultEngine.ini](../Config/DefaultEngine.ini)).
+- [x] `[사용자]` PIE 실행 검증.
 
-> 에셋은 binary(.uasset/.umap)라 에디터 작업이다. C++에서 에셋 **경로/GUID를 추측해 하드코딩하지 않는다**.
+> 레벨은 binary(.umap)라 에디터 작업이다. C++에서 에셋 **경로/GUID를 추측해 하드코딩하지 않는다**.
+>
+> **Epic 무료 캐릭터 에셋(Manny/Quinn 등)은 Phase 0에서 제외**(→ §7). 당초 작업 4에 있었으나,
+> 에셋 확보로 시도한 **C++ 기반 Third Person 콘텐츠 팩**이 게임플레이 C++ 40여 클래스를 통째로 끌고 와
+> 빌드를 깨고 HSA 자체 설계(GAS 기반)와 충돌했다 → 전부 롤백하고 캐릭터 에셋은 후속 Phase로 미뤘다.
 
 ---
 
@@ -87,7 +92,7 @@ Phase에서 그때 만든다(빈 폴더는 git에 추적되지도 않음).
 > 거친 완료 기준 요약일 뿐, 세부 진행 상태는 **§3 체크리스트(SSOT)** 를 본다.
 
 - [x] GAS 모듈이 링크된 상태로 컴파일되는 프로젝트.
-- [ ] 실행 가능한 테스트 레벨.
+- [x] 실행 가능한 테스트 레벨.
 
 ---
 
@@ -108,4 +113,5 @@ Phase에서 그때 만든다(빈 폴더는 git에 추적되지도 않음).
 
 - `AbilitySystemGlobals` 초기화, ASC/`UHSAAttributeSet`/`GameplayEffect` 등 → **Phase 2(GAS 토대)**.
 - `InputMappingContext`/`InputAction` 에셋, 캐릭터/카메라 → **Phase 1**.
+- Epic 무료 캐릭터 에셋(Manny/Quinn·Paragon 등) → 캐릭터 비주얼이 필요한 Phase에서 **순수 에셋(메시·애니)만 선별 import**. C++ 콘텐츠 팩 방식은 게임플레이 C++를 통째로 끌고 와 자체 설계와 충돌하므로 지양.
 - 시스템별 디렉터리 일괄 생성 → 각 시스템이 처음 등장하는 Phase에서.
