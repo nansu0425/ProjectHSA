@@ -49,14 +49,17 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
 ```
 
 각 phase는 **목표 / 구현 항목 / Asset / 산출물(마일스톤) / 학습 포인트** 로 구성됩니다.
-마일스톤은 체크박스로 진행을 추적합니다.
+산출물은 그 phase의 **완료 기준(정의)** 일 뿐, ROADMAP은 진행 상태를 직접 추적하지 않습니다.
+
+> **진행 상태의 단일 출처(SSOT):** 각 phase의 실제 진행 상태는 **그 phase의 세부 작업 계획 문서**가 유일한 출처입니다.
+> ROADMAP은 phase별로 그 문서를 **링크**해 진행 상황을 가리킵니다 — 같은 상태를 두 곳에 적어 어긋나는 일을 막기 위함입니다.
+> 세부 문서가 아직 없는 phase는 해당 phase 착수 시 `PhaseN-Plan.md` 형식으로 작성합니다.
 
 ---
 
 ## Phase 0 — 프로젝트 기반
 
-> 일부 완료: UE 5.7 단일 `HSA` 런타임 모듈, `EnhancedInput` 의존성.
-> 실행 체크리스트·담당 구분·검증 방법은 [Phase 0 작업 계획](Phase0-Plan.md)을 본다.
+> **진행 상태(SSOT):** [Phase 0 작업 계획](Phase0-Plan.md) — 실행 체크리스트·담당 구분·검증·완료 여부를 모두 그 문서에서 추적한다.
 
 - **목표:** 빌드/모듈/입력 토대를 정리하고 GAS 사용 준비를 마친다.
 - **구현 항목:**
@@ -66,13 +69,15 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
   - `HSA.Build.cs`에 의존성 추가: `GameplayAbilities`, `GameplayTags`, `GameplayTasks`.
 - **Asset:** 테스트용 기본 레벨(빈 맵 + 바닥/조명), Epic 무료 에셋(Manny/Quinn 등) 프로젝트에 추가.
 - **산출물(마일스톤):**
-  - [ ] GAS 모듈이 링크된 상태로 컴파일되는 프로젝트.
-  - [ ] 실행 가능한 테스트 레벨.
+  - GAS 모듈이 링크된 상태로 컴파일되는 프로젝트.
+  - 실행 가능한 테스트 레벨.
 - **학습 포인트:** UBT/모듈 구조, 플러그인 의존성, 프로젝트 디렉터리 컨벤션.
 
 ---
 
 ## Phase 1 — 플레이어 캐릭터 기반
+
+> **진행 상태(SSOT):** 세부 작업 계획 문서(`Phase1-Plan.md`)는 이 phase 착수 시 작성한다.
 
 - **목표:** 조작 가능한 third-person 캐릭터를 만든다.
 - **구현 항목:**
@@ -82,12 +87,14 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
   - 기본 애니메이션 연동.
 - **Asset:** 무료 캐릭터 skeletal mesh + locomotion animation(걷기/달리기/점프 — Manny/Quinn 또는 Paragon), Animation Blueprint.
 - **산출물(마일스톤):**
-  - [ ] 맵에서 이동/시점 조작/점프가 되는 캐릭터.
+  - 맵에서 이동/시점 조작/점프가 되는 캐릭터.
 - **학습 포인트:** Character/Controller/Pawn 관계, EnhancedInput, 입력은 컨트롤러에서 받아 캐릭터로 위임하는 패턴.
 
 ---
 
 ## Phase 2 — GAS 토대
+
+> **진행 상태(SSOT):** 세부 작업 계획 문서(`Phase2-Plan.md`)는 이 phase 착수 시 작성한다.
 
 - **목표:** GAS 최소 구성으로 능력 1개를 입력부터 효과 적용까지 끝까지 발동한다(vertical slice).
 - **구현 항목:**
@@ -98,12 +105,14 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
   - `AbilitySystemGlobals` 초기화.
 - **Asset:** 발동 확인용 placeholder VFX/SFX(Niagara 기본 또는 무료 에셋), 디버그 표시.
 - **산출물(마일스톤):**
-  - [ ] 입력 → ability 발동 → effect로 attribute가 변하는 수직 슬라이스.
+  - 입력 → ability 발동 → effect로 attribute가 변하는 수직 슬라이스.
 - **학습 포인트:** ASC, AttributeSet, GameplayEffect, GameplayTag, GAS의 prediction/authority 모델 개념.
 
 ---
 
 ## Phase 3 — 영웅 시스템
+
+> **진행 상태(SSOT):** 세부 작업 계획 문서(`Phase3-Plan.md`)는 이 phase 착수 시 작성한다.
 
 - **목표:** 영웅마다 서로 다른 고유 전투 방식을 구현한다.
 - **구현 항목:**
@@ -113,12 +122,14 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
   - 간단한 영웅 선택 진입점.
 - **Asset:** 영웅 2~3종 구분용 무료 메시/머티리얼(색상 변형 또는 Paragon 캐릭터), 영웅별 스킬 VFX placeholder, 영웅 아이콘.
 - **산출물(마일스톤):**
-  - [ ] 2~3개 영웅을 선택해 서로 다른 스킬로 플레이.
+  - 2~3개 영웅을 선택해 서로 다른 스킬로 플레이.
 - **학습 포인트:** DataAsset 기반 data-driven 설계, ability granting, GAS 확장.
 
 ---
 
 ## Phase 4 — 적 / AI / 전투 루프
+
+> **진행 상태(SSOT):** 세부 작업 계획 문서(`Phase4-Plan.md`)는 이 phase 착수 시 작성한다.
 
 - **목표:** 적을 처치하는 전투를 성립시킨다.
 - **구현 항목:**
@@ -128,12 +139,14 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
   - 체력 UI(UMG) 기초.
 - **Asset:** 적 무료 메시 + 이동/공격/사망 animation, 피격 VFX/SFX, 체력바 위젯 placeholder.
 - **산출물(마일스톤):**
-  - [ ] 적이 스폰되어 플레이어를 추적·공격하고, 플레이어가 적을 처치 가능.
+  - 적이 스폰되어 플레이어를 추적·공격하고, 플레이어가 적을 처치 가능.
 - **학습 포인트:** AIController/BehaviorTree, GAS를 적 캐릭터에도 재사용, 데미지 파이프라인.
 
 ---
 
 ## Phase 5 — Wave 시스템
+
+> **진행 상태(SSOT):** 세부 작업 계획 문서(`Phase5-Plan.md`)는 이 phase 착수 시 작성한다.
 
 - **목표:** 난이도가 점점 올라가는 wave 진행을 구현한다.
 - **구현 항목:**
@@ -142,12 +155,14 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
   - wave 진행 UI.
 - **Asset:** 아레나 레벨(무료 환경 에셋 또는 간단한 모듈러 키트), 스폰 포인트 마커, wave/타이머 HUD 위젯.
 - **산출물(마일스톤):**
-  - [ ] 웨이브 시작 → 전멸 → 다음 웨이브로 이어지는 루프.
+  - 웨이브 시작 → 전멸 → 다음 웨이브로 이어지는 루프.
 - **학습 포인트:** GameMode/GameState 책임 분리(멀티 대비 상태는 GameState에), 스폰 시스템.
 
 ---
 
 ## Phase 6 — 휴식 시간 & 상점 (코어 루프 완성)
+
+> **진행 상태(SSOT):** 세부 작업 계획 문서(`Phase6-Plan.md`)는 이 phase 착수 시 작성한다.
 
 - **목표:** README의 core gameplay loop를 완성한다.
 - **구현 항목:**
@@ -157,12 +172,14 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
   - 구매 → 능력/스탯 반영(GAS effect/ability grant 연계).
 - **Asset:** 상점 UI 위젯 셋(패널/버튼/슬롯), item·equipment 아이콘(무료 아이콘 팩), 구매 SFX.
 - **산출물(마일스톤):**
-  - [ ] 웨이브 사이 상점에서 구매 후 강화된 상태로 다음 웨이브에 진입.
+  - 웨이브 사이 상점에서 구매 후 강화된 상태로 다음 웨이브에 진입.
 - **학습 포인트:** UMG, 인벤토리/장비 데이터 모델, GAS와 아이템 연동.
 
 ---
 
 ## Phase 7 — 멀티플레이 전환 (co-op)
+
+> **진행 상태(SSOT):** 세부 작업 계획 문서(`Phase7-Plan.md`)는 이 phase 착수 시 작성한다.
 
 - **목표:** 싱글플레이로 완성한 시스템을 networked co-op으로 전환한다.
 - **구현 항목:**
@@ -173,13 +190,15 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
   - 세션/접속(listen server 기준).
 - **Asset:** 신규 asset 거의 없음 — 로비/접속 UI 위젯 placeholder 정도.
 - **산출물(마일스톤):**
-  - [ ] 2인 이상 co-op으로 wave 생존 플레이.
+  - 2인 이상 co-op으로 wave 생존 플레이.
 - **학습 포인트:** UE replication 모델, server-authoritative 설계, GAS 네트워크 prediction.
 - **메모:** 앞선 phase에서 원칙 2("멀티 친화 설계")를 지켜왔다면 이 phase의 재작업이 최소화됩니다.
 
 ---
 
 ## Phase 8 — 폴리시 & 콘텐츠 확장 (지속)
+
+> **진행 상태(SSOT):** 지속 항목이라 단일 완료 시점이 없다. 개별 작업 착수 시 필요하면 `Phase8-*.md`로 세부 문서를 둔다.
 
 코어 루프 + co-op 완성 이후 지속적으로 확장하는 항목:
 
