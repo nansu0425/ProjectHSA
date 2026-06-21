@@ -1,0 +1,32 @@
+# Unreal Engine generated/build artifacts
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+
+# Editor / IDE
+.vs/
+.idea/
+.vscode/
+*.VC.db
+*.VC.opendb
+*.opensdf
+*.sdf
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
+
+# Compiled source
+*.o
+*.obj
+*.lib
+*.dll
+*.exe
+*.pdb
+*.app
+
+# Misc
+*.tmp
+*.log
