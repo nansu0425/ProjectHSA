@@ -77,18 +77,18 @@ Phase 0 ──▶ Phase 1 ──▶ Phase 2 ──▶ Phase 3 ──▶ Phase 4 
 
 ## Phase 1 — 플레이어 캐릭터 기반
 
-> **진행 상태(SSOT):** 세부 작업 계획 문서(`Phase1-Plan.md`)는 이 phase 착수 시 작성한다.
+> **진행 상태(SSOT):** [Phase 1 작업 계획](Phase1-Plan.md) — 실행 체크리스트·담당 구분·검증·완료 여부를 모두 그 문서에서 추적한다.
 
 - **목표:** 조작 가능한 third-person 캐릭터를 만든다.
 - **구현 항목:**
   - `AHSACharacter`(`ACharacter` 기반), `USpringArmComponent` + `UCameraComponent`.
-  - EnhancedInput 기반 이동/시점/점프.
-  - `AHSAPlayerController` — 입력을 받아 캐릭터로 위임(멀티 대비 입력/로직 분리).
+  - EnhancedInput 기반 이동/시점/점프 — **Pawn 종속 입력이라 `AHSACharacter`에서 처리**.
+  - `AHSAPlayerController` — 전역(Pawn 비종속) 입력의 거점(Phase 1엔 골격, 후속 Phase에서 메뉴·관전 등 담당).
   - 기본 애니메이션 연동.
 - **Asset:** 무료 캐릭터 skeletal mesh + locomotion animation(걷기/달리기/점프 — Manny/Quinn 또는 Paragon), Animation Blueprint.
 - **산출물(마일스톤):**
   - 맵에서 이동/시점 조작/점프가 되는 캐릭터.
-- **학습 포인트:** Character/Controller/Pawn 관계, EnhancedInput, 입력은 컨트롤러에서 받아 캐릭터로 위임하는 패턴.
+- **학습 포인트:** Character/Controller/Pawn 관계, EnhancedInput, **입력의 성격별 분리**(Pawn 종속 입력은 Character, 전역 입력은 PlayerController).
 
 ---
 
